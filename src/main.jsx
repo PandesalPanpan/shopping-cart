@@ -4,14 +4,16 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router'
 import HomePage from './pages/HomePage.jsx'
 import RootLayout from './layouts/RootLayout.jsx'
+import ShopPage from './pages/ShopPage.jsx'
+import CartPage from './pages/CartPage.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout/>,
     children: [
-      { index: true, element: <div>Landing Page</div>},
-      { path: '/shop', element: <div>Shop Page</div>},
-      { path: '/cart', element: <div>Cart Page</div>},
+      { index: true, element: <HomePage/>},
+      { path: '/shop', element: <ShopPage/>},
+      { path: '/cart', element: <CartPage/>},
     ]
   },
   {
