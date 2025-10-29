@@ -14,6 +14,7 @@ export default function ShopPage() {
                 if (!response.ok) throw new Error('Network error');
                 const json = await response.json();
                 console.log(json);
+                setLoading(false);
                 setProducts(json);
             } catch (err) {
                 if (err.name !== 'AbortError') console.error(err);
@@ -32,7 +33,7 @@ export default function ShopPage() {
             {/*Probably make this into a component*/}
             <h2>Bigger Grid here</h2>
             <div className={styles.featuredCollections}>
-                {products.map((product) => {
+                {isLoading ? <div>Loading</div> : products.map((product) => {
                     return (<li key={product.id}>{product.title}</li>)
                 })}
             </div>
