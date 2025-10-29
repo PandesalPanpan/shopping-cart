@@ -1,12 +1,13 @@
+import styles from './Navigation.module.css';
 
 export default function Navigation() {
 
     return (
-        <nav className="navigation-container">
-            <ul>
-                <li><a href="/"></a>Home</li>
-                <li><a href="/shop"></a>Shop</li>
-                <li><a href="/cart"></a>Cart</li>
+        <nav className={styles.navigationContainer}>
+            <ul className={styles.navigationList}>
+                <li><button><a href="/"></a>Home</button></li>
+                <li><button><a href="/shop"></a>Shop</button></li>
+                <li><button><a href="/cart"></a>Cart</button></li>
             </ul>
         </nav>
     )

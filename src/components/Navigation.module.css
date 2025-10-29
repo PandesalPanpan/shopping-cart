@@ -1,0 +1,21 @@
+.navigationContainer {    
+    width: 100vw;
+    height: 100px;
+    background-color: hsl(9, 68%, 35%);
+}
+
+.navigationList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-size: 1.4rem;
+    height: 100%;
+    margin: 0;
+    gap: 5rem;
+}
+
+.navigationList li:hover {
+    color: red;
+    cursor: pointer;
+}
