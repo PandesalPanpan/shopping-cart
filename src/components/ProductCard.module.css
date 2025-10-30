@@ -23,3 +23,14 @@
   height: 100%;
   object-fit: contain;
 }
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.flexPriceStars {
+    display: flex;
+    justify-content: space-between;
+}

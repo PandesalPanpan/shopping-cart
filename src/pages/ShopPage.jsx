@@ -37,7 +37,12 @@ export default function ShopPage() {
                 {isLoading ? <div>Loading</div> : products.map((product) => {
                     return (
                         <li key={product.id}>
-                            <ProductCard name={product.title} image={product.image}/>
+                            <ProductCard 
+                            name={product.title} 
+                            image={product.image} 
+                            price={product.price} 
+                            rating={product.rating}
+                            />
                         </li>
                     )
                 })}
