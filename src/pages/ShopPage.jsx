@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import styles from './ShopPage.module.css';
 import ProductCard from '../components/ProductCard';
 import { Toaster } from 'react-hot-toast';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
+import ProductCardSkeleton from '../components/ProductCardSkeleton';
+
 
 export default function ShopPage() {
     const [isLoading, setLoading] = useState(true);
@@ -36,17 +40,21 @@ export default function ShopPage() {
                 reverseOrder={false}
             />
             <h1>Shop</h1>
+            <Skeleton></Skeleton>
             {/*Probably make this into a component*/}
-            <h2>Bigger Grid here</h2>
             <div className={styles.productsGallery}>
-                {isLoading ? <div>Loading</div> : products.map((product) => {
+                {isLoading ? (
+                    Array(8).fill(0).map((_, index) => (
+                        <li key={index}><ProductCardSkeleton/></li>
+                    ))
+                ) : products.map((product) => {
                     return (
                         <li key={product.id}>
-                            <ProductCard 
-                            name={product.title} 
-                            image={product.image} 
-                            price={product.price} 
-                            rating={product.rating}
+                            <ProductCard
+                                name={product.title}
+                                image={product.image}
+                                price={product.price}
+                                rating={product.rating}
                             />
                         </li>
                     )
