@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './ShopPage.module.css';
+import ProductCard from '../components/ProductCard';
 
 export default function ShopPage() {
     const [isLoading, setLoading] = useState(true);
@@ -32,9 +33,13 @@ export default function ShopPage() {
             <h1>Shop</h1>
             {/*Probably make this into a component*/}
             <h2>Bigger Grid here</h2>
-            <div className={styles.featuredCollections}>
+            <div className={styles.productsGallery}>
                 {isLoading ? <div>Loading</div> : products.map((product) => {
-                    return (<li key={product.id}>{product.title}</li>)
+                    return (
+                        <li key={product.id}>
+                            <ProductCard name={product.title} image={product.image}/>
+                        </li>
+                    )
                 })}
             </div>
         </div>
