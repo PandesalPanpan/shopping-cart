@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './ShopPage.module.css';
 import ProductCard from '../components/ProductCard';
+import { Toaster } from 'react-hot-toast';
 
 export default function ShopPage() {
     const [isLoading, setLoading] = useState(true);
@@ -30,6 +31,10 @@ export default function ShopPage() {
 
     return (
         <div className={styles.pageContainer}>
+            <Toaster
+                position='top-center'
+                reverseOrder={false}
+            />
             <h1>Shop</h1>
             {/*Probably make this into a component*/}
             <h2>Bigger Grid here</h2>

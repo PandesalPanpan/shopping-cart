@@ -1,6 +1,11 @@
-export default function AddToCart({}) {
+import toast from "react-hot-toast"
+import truncateString from "../utils/truncate";
+
+export default function AddToCart({name}) {
     // Write a trigger a notifier from here
     return (
-        <button>Add to Cart</button>
+        <button onClick={() => {
+            toast.success(`${truncateString(name, 15)} Added to Cart`);
+        }}>Add to Cart</button>
     )
 }

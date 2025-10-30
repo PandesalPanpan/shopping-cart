@@ -1,6 +1,7 @@
 import styles from './ProductCard.module.css';
 import AddToCart from './AddToCart';
 import { StarRating } from 'react-flexible-star-rating';
+
 export default function ProductCard({
     name,
     image,
@@ -20,7 +21,6 @@ export default function ProductCard({
                     <div className={styles.flexStarsCount}>
                         <StarRating
                         starsLength={5}
-                        isHoverEnabled={false}
                         isReadOnly={true}
                         initialRating={Math.floor(rating.rate)}
                         dimension={7}
@@ -30,7 +30,10 @@ export default function ProductCard({
                     </div>
                 </div>
             </div>
-            <AddToCart></AddToCart>
+            <AddToCart
+                key={"addToCart"+name}
+                name={name}
+            ></AddToCart>
         </div>
     ) 
 }
