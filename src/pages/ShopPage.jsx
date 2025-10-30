@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './ShopPage.module.css';
 import ProductCard from '../components/ProductCard';
 import { Toaster } from 'react-hot-toast';
+import PageHeader from '../components/PageHeader';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import ProductCardSkeleton from '../components/ProductCardSkeleton';
@@ -39,8 +40,7 @@ export default function ShopPage() {
                 position='top-center'
                 reverseOrder={false}
             />
-            <h1>Shop</h1>
-            <Skeleton></Skeleton>
+            <PageHeader>Shop Page</PageHeader>
             {/*Probably make this into a component*/}
             <div className={styles.productsGallery}>
                 {isLoading ? (
