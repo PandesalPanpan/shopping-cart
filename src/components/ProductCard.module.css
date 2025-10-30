@@ -27,10 +27,21 @@
 .productDetails {
     display: flex;
     flex-direction: column;
-    font-size: 1.2rem;
 }
 
 .flexPriceStars {
     display: flex;
     justify-content: space-between;
+    font-size: 1.3rem;
+}
+
+.flexStarsCount {
+    display: flex;
+    gap: 10px;
+}
+
+.flexStarsCount span {
+    place-content: center;
+    font-size: 1rem;
+    color: hsl(0, 0%, 90%);
 }
