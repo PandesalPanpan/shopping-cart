@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './ShopPage.module.css';
 import ProductCard from '../components/ProductCard';
 import { Toaster } from 'react-hot-toast';
+import PageHeader from '../components/PageHeader';
 
 export default function ShopPage() {
     const [isLoading, setLoading] = useState(true);
@@ -35,9 +36,8 @@ export default function ShopPage() {
                 position='top-center'
                 reverseOrder={false}
             />
-            <h1>Shop</h1>
+            <PageHeader>Shop Page</PageHeader>
             {/*Probably make this into a component*/}
-            <h2>Bigger Grid here</h2>
             <div className={styles.productsGallery}>
                 {isLoading ? <div>Loading</div> : products.map((product) => {
                     return (
