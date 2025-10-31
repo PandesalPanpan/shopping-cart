@@ -56,6 +56,10 @@ export function reducer(cartItems, action) {
         }
         ).filter((item) => item.count > 0);
     }
+
+    if (action.type === 'clear') {
+        return [];
+    }
     
     throw Error("Unknown action.");
 }

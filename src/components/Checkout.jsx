@@ -1,9 +1,16 @@
 import { useContext } from 'react';
 import styles from './Checkout.module.css';
-import { CartItemsContext } from '../providers/CartItemsProvider';
+import { CartItemsContext, CartItemsDispatcherContext } from '../providers/CartItemsProvider';
 
 export default function Checkout() {
     const cartItems = useContext(CartItemsContext);
+    const dispatch = useContext(CartItemsDispatcherContext);
+
+    const handleClear = () => {
+        dispatch({
+            type: 'clear'
+        })
+    }
 
     const subtotal = cartItems.reduce((prev, curr) => {
         return prev + (curr.price * curr.count);
@@ -19,7 +26,7 @@ export default function Checkout() {
             <h3>Total Number of items: <span>{totalItemsCount}</span></h3>
             <p>Tax included after checkout.</p>
             <div className={styles.actionButtons}>
-                <button>Clear</button>
+                <button onClick={handleClear}>Clear</button>
                 <button className={styles.checkoutButton}>Checkout</button>
             </div>
             {/* Total number of items */}
