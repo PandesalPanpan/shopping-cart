@@ -1,16 +1,24 @@
-# React + Vite
+# Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live demo: N/A
 
-Currently, two official plugins are available:
+A small React shopping cart demo demonstrating routing, a global cart context, product listing/cards, and small UI utilities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key features
+- Client-side routing (RouterProvider / createBrowserRouter)
+- Global cart state via a provider + reducer
+- Add-to-cart actions with toast notifications
+- Product cards with consistent image sizing and clamped text
+- Cart page with item list and checkout area
+- Small utility helpers (truncate, cart totals)
 
-## React Compiler
+## Tech stack
+- React
+- react-router (RouterProvider)
+- CSS Modules for component-scoped styles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Notes / implementation details
+- Use a Context + useReducer for cart state (recommended for global access and predictable updates).
+- Use absolute paths (leading `/`) with Links to avoid relative route resolution (e.g. use `/shop` not `shop` from /cart).
+- Constrain images by placing them in a fixed/aspect-ratio wrapper and using `object-fit: cover` to ensure all cards are the same size.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
