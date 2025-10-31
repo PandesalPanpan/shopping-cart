@@ -10,7 +10,7 @@ export default function CartItem({
     count
 }) {
     const dispatch = useContext(CartItemsDispatcherContext);
-    const totalPrice = price * count;
+    const totalPrice = (price * count).toFixed(2);
 
     function handlePlus() {
         dispatch({
@@ -36,9 +36,10 @@ export default function CartItem({
                 <div className={styles.productPrice}>${price} <span>(per item)</span></div>
                 <div className={styles.productTotal}>Total: ${totalPrice}</div>
             </div>
-            <div className={styles.buttons}>
-                <button onClick={handlePlus}>Plus</button>
-                <button onClick={handleMinus}>Minus</button>
+            <div className={styles.productCountAction}>
+                <button onClick={handleMinus}>-</button>
+                <span>{count}</span>
+                <button onClick={handlePlus}>+</button>
             </div>
         </div>
     )
