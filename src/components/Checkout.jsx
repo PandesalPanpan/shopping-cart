@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import styles from './Checkout.module.css';
 import { CartItemsContext, CartItemsDispatcherContext } from '../providers/CartItemsProvider';
+import { getSubtotal, getTotalItemsCount } from '../utils/cart-data-utils';
 
 export default function Checkout() {
     const cartItems = useContext(CartItemsContext);
@@ -12,13 +13,8 @@ export default function Checkout() {
         })
     }
 
-    const subtotal = cartItems.reduce((prev, curr) => {
-        return prev + (curr.price * curr.count);
-    }, 0).toFixed(2);
-
-    const totalItemsCount = cartItems.reduce((prev, curr) => {
-        return prev + curr.count; 
-    }, 0)
+    const subtotal = getSubtotal(cartItems);
+    const totalItemsCount = getTotalItemsCount(cartItems);
 
     return (
         <div className={styles.checkoutContainer}>
