@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styles from './CartItem.module.css';
+import { CartItemsDispatcherContext } from '../providers/CartItemsProvider';
 
 export default function CartItem({
     id,
@@ -7,10 +9,15 @@ export default function CartItem({
     price,
     count
 }) {
-    // Calculate the price total in here
+    const dispatch = useContext(CartItemsDispatcherContext);
     const totalPrice = price * count;
 
-    // Add a dispatch on adding and removing buttons
+    function handlePlus() {
+        dispatch({
+            type: 'add',
+            id,
+        })
+    }
 
     return (
         <div className={styles.cartItemCard}>
@@ -23,7 +30,7 @@ export default function CartItem({
                 <div>{count}</div>
             </div>
             <div className={styles.buttons}>
-                <button>Plus</button>
+                <button onClick={handlePlus}>Plus</button>
                 <button>Minus</button>
             </div>
         </div>
