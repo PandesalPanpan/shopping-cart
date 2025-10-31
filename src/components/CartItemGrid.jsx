@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CartItemsContext } from '../providers/CartItemsProvider';
 import CartItem from './CartItem';
 import styles from './CartItemGrid.module.css';
+import Checkout from './Checkout';
 
 export default function CartItemGrid() {
     const cartItems = useContext(CartItemsContext);
@@ -25,7 +26,7 @@ export default function CartItemGrid() {
                     />
                 })}
             </div>
-            <div>Grid Checkout Component</div>
+            <Checkout>Grid Checkout Component</Checkout>
         </div>
     )
 }

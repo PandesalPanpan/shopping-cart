@@ -1,0 +1,30 @@
+.checkoutContainer {
+    background-color: hsl(0, 0%, 70%);
+    border-radius: 15px;
+    width: 90%;
+    height: 190px;
+    margin-top: 20px;
+    padding: 30px;
+    align-self: flex-start;
+}
+
+.checkoutContainer h2 span {
+    color: hsl(0, 100%, 45%);
+}
+
+.checkoutContainer p {
+    color: hsl(0, 0%, 18%);
+}
+
+.actionButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clearButton {
+
+}
+
+.checkoutButton {
+    background-color: hsl(16, 100%, 30%);
+}

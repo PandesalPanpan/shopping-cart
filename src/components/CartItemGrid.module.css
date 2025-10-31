@@ -5,4 +5,5 @@
     color: black;
     place-items: center;
     width: 60vw;
+    min-height: 232px;
 }
