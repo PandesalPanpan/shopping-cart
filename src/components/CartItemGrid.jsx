@@ -13,10 +13,7 @@ export default function CartItemGrid() {
                 {cartItems.map((item) => {
                     return <CartItem
                         key={item.id}
-                        name={item.name}
-                        count={item.count}
-                        price={item.price}
-                        imageURL={item.imageURL}
+                        {...item}
                     />
                 })}
             </div>
