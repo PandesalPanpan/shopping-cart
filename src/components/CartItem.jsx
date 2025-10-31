@@ -32,9 +32,9 @@ export default function CartItem({
                 <img className={styles.cartItemImage }src={imageURL}></img>
             </div>
             <div className={styles.productDetails}>
-                <div>{name}</div>
-                <div>{price}</div>
-                <div>{count}</div>
+                <h2 className={styles.productTitle}>{name}</h2>
+                <div className={styles.productPrice}>${price} <span>(per item)</span></div>
+                <div className={styles.productTotal}>Total: ${totalPrice}</div>
             </div>
             <div className={styles.buttons}>
                 <button onClick={handlePlus}>Plus</button>

@@ -28,8 +28,27 @@
 
 .productDetails {
     grid-area: 1 / 2 / 2 / 5;
+    margin-left: 15px;
 }
 
 .buttons {
     grid-area: 1 / 5 / 2 / 6;
+}
+.productTitle {
+    font-size: 1rem;
+}
+
+.productPrice {
+    font-size: 1rem;
+    font-weight: 400;
+    color: hsl(0, 0%, 10%);
+}
+
+.productPrice span {
+    color: hsl(0, 0%, 20%);
+}
+
+.productTotal {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
