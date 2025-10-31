@@ -1,5 +1,9 @@
 .cartItemCard {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     background-color: hsl(0, 0%, 90%);
     width: 500px;
     max-height: 120px;
@@ -8,15 +12,24 @@
 }
 
 .imageBox {
-  width: 30%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 16px;
-  background: #fff;
+    grid-area: 1 / 1 / 2 / 2;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #fff;
 }
 
 .imageBox .cartItemImage {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.productDetails {
+    grid-area: 1 / 2 / 2 / 5;
+}
+
+.buttons {
+    grid-area: 1 / 5 / 2 / 6;
 }

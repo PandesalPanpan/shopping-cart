@@ -16,10 +16,14 @@ export default function CartItem({
             <div className={styles.imageBox}>
                 <img className={styles.cartItemImage }src={imageURL}></img>
             </div>
-            <div>
+            <div className={styles.productDetails}>
                 <div>{name}</div>
                 <div>{price}</div>
                 <div>{count}</div>
+            </div>
+            <div className={styles.buttons}>
+                <button>Plus</button>
+                <button>Minus</button>
             </div>
         </div>
     )
