@@ -6,6 +6,14 @@ import styles from './CartItemGrid.module.css';
 export default function CartItemGrid() {
     const cartItems = useContext(CartItemsContext);
 
+    if (cartItems.length < 1) {
+        return (
+            <h2>
+                You have an empty cart.
+            </h2>
+        )
+    }
+
 
     return (
         <div className={styles.cartItemGrid}>
