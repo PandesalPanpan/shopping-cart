@@ -19,6 +19,13 @@ export default function CartItem({
         })
     }
 
+    function handleMinus() {
+        dispatch({
+            type: 'minus',
+            id
+        })
+    }
+
     return (
         <div className={styles.cartItemCard}>
             <div className={styles.imageBox}>
@@ -31,7 +38,7 @@ export default function CartItem({
             </div>
             <div className={styles.buttons}>
                 <button onClick={handlePlus}>Plus</button>
-                <button>Minus</button>
+                <button onClick={handleMinus}>Minus</button>
             </div>
         </div>
     )
