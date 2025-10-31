@@ -34,6 +34,7 @@ export default function ProductCard({
             <AddToCart
                 key={"addToCart"+name}
                 productId={productId}
+                imageURL={image}
                 name={name}
                 price={price}
             ></AddToCart>

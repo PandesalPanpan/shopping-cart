@@ -31,6 +31,7 @@ export function reducer(cartItems, action) {
         return [
             ...cartItems, {
                 id: action.id,
+                imageURL: action.imageURL,
                 name: action.name,
                 price: action.price,
                 count: 1

@@ -6,7 +6,8 @@ import { CartItemsDispatcherContext } from "../providers/CartItemsProvider";
 export default function AddToCart({
     productId, 
     name,
-    price
+    price,
+    imageURL
 }) {
     const dispatch = useContext(CartItemsDispatcherContext);
     
@@ -15,6 +16,7 @@ export default function AddToCart({
             dispatch({
                 type: 'add',
                 id: productId,
+                imageURL,
                 name,
                 price
             });
