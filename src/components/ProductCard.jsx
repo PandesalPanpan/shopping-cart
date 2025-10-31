@@ -3,6 +3,7 @@ import AddToCart from './AddToCart';
 import { StarRating } from 'react-flexible-star-rating';
 
 export default function ProductCard({
+    productId,
     name,
     image,
     price,
@@ -32,7 +33,9 @@ export default function ProductCard({
             </div>
             <AddToCart
                 key={"addToCart"+name}
+                productId={productId}
                 name={name}
+                price={price}
             ></AddToCart>
         </div>
     ) 

@@ -3,10 +3,8 @@ import styles from './ShopPage.module.css';
 import ProductCard from '../components/ProductCard';
 import { Toaster } from 'react-hot-toast';
 import PageHeader from '../components/PageHeader';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import ProductCardSkeleton from '../components/ProductCardSkeleton';
-
 
 export default function ShopPage() {
     const [isLoading, setLoading] = useState(true);
@@ -51,6 +49,7 @@ export default function ShopPage() {
                     return (
                         <li key={product.id}>
                             <ProductCard
+                                productId={product.id}
                                 name={product.title}
                                 image={product.image}
                                 price={product.price}
