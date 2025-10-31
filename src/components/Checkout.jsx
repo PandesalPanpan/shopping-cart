@@ -19,7 +19,7 @@ export default function Checkout() {
             <h3>Total Number of items: <span>{totalItemsCount}</span></h3>
             <p>Tax included after checkout.</p>
             <div className={styles.actionButtons}>
-                <button className={styles.clearButton}>Clear</button>
+                <button>Clear</button>
                 <button className={styles.checkoutButton}>Checkout</button>
             </div>
             {/* Total number of items */}
