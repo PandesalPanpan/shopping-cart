@@ -1,6 +1,6 @@
 # Shopping Cart
 
-Live demo: N/A
+Live demo: https://react-shopping-cart-pandesal.netlify.app/
 
 A small React shopping cart demo demonstrating routing, a global cart context, product listing/cards, and small UI utilities.
 
