@@ -1,0 +1,8 @@
+.cartItemGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: hsl(0, 0%, 90%);
+    color: black;
+    place-items: center;
+    width: 60vw;
+}
